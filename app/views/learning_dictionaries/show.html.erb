@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @learning_dictionary.title %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @learning_dictionary.definition %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @learning_dictionary.content %>
+</p>
+
+<%= link_to 'Edit', edit_learning_dictionary_path(@learning_dictionary) %> |
+<%= link_to 'Back', learning_dictionaries_path %>

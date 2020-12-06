@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teaching Ideas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teaching_ideas.each do |teaching_idea| %>
+      <tr>
+        <td><%= teaching_idea.title %></td>
+        <td><%= teaching_idea.content %></td>
+        <td><%= link_to 'Show', teaching_idea %></td>
+        <td><%= link_to 'Edit', edit_teaching_idea_path(teaching_idea) %></td>
+        <td><%= link_to 'Destroy', teaching_idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teaching Idea', new_teaching_idea_path %>
+<%# @teaching_ideas.each do |teaching_idea| %>
+<!--  <div class="colNew align-self-center set-box">-->
+<!--    <div class="card set-box ">-->
+<!--      <div class="card-body set-box">-->
+<!--        <h5 class="card-title"><%#= teaching_idea.title %></h5>-->
+<!--        <h6 class="card-subtitle mb-2 text-muted"><%#= teaching_idea.content %>></h6>-->
+<!--        <p class="card-text"><%#=h truncate(teaching_idea.content, :length=> 80) %></p>-->
+<!--        <a href="#" class="card-link">Card link</a>-->
+<!--        <a href="#" class="card-link">Another link</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<%# end %>
+
