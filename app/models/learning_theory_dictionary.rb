@@ -1,0 +1,2 @@
+class LearningTheoryDictionary < ApplicationRecord
+end

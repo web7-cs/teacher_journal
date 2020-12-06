@@ -1,0 +1,2 @@
+class TeachingIdea < ApplicationRecord
+end
