@@ -1,0 +1,27 @@
+<%= form_with(model: teaching_idea, local: true) do |form| %>
+  <% if teaching_idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teaching_idea.errors.count, "error") %> prohibited this teaching_idea from being saved:</h2>
+
+      <ul>
+        <% teaching_idea.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

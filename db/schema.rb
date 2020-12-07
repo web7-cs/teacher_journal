@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_12_06_173358) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "learning_theory_dictionaries", force: :cascade do |t|
-    t.string "name"
+  create_table "learning_dictionaries", force: :cascade do |t|
+    t.string "title"
     t.text "definition"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_173358) do
     t.string "gender"
     t.string "occupation"
     t.boolean "is_creator", default: false, null: false
-    t.string "age"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

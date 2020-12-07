@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Learning Dictionaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Definition</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_dictionaries.each do |learning_dictionary| %>
+      <tr>
+        <td><%= learning_dictionary.title %></td>
+        <td><%= learning_dictionary.definition %></td>
+        <td><%= learning_dictionary.content %></td>
+        <td><%= link_to 'Show', learning_dictionary %></td>
+        <% if current_user %>
+        <td><%= link_to 'Edit', edit_learning_dictionary_path(learning_dictionary) %></td>
+        <td><%= link_to 'Destroy', learning_dictionary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+      <% if current_user.is_creator? %>
+      <%= link_to 'New Learning Dictionary', new_learning_dictionary_path %>
+      <% end %>
+ <%end%>
+

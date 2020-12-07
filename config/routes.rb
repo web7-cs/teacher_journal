@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :learning_dictionaries
+  resources :teaching_ideas
   get 'home/index'
+  get '/test', to: 'home#test'
   devise_for :users
   resources :users
   devise_for :admin_users, ActiveAdmin::Devise.config
